@@ -1,14 +1,20 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
+const User = require("../models/User");
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+router.get("/", (req, res, next) => {
+  res.render("index");
 });
 
-router.get('/api', (req, res, next) => {
+router.get("/api", (req, res, next) => {
   console.log(req.body);
-  res.json({message: 'stuff!'});
-})
+  User.find().then(users => {
+    return res.json(users);
+  })
+  .catch(err => {
+    next(err);
+  })
+});
 
 module.exports = router;
