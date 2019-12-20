@@ -529,7 +529,6 @@ const seedData = async () => {
         console.log(err);
       }
       if (!found) {
-
         await Data.insertMany(dataSet);
         console.log(dataSet.length, " documents were added to the database");
       }
