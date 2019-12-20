@@ -59,7 +59,9 @@ export default class Home extends Component {
           id="search"
           value={this.state.search}
         />
+        <div className="all-people">
         {mappedPersons}
+        </div>
       </>
     );
   }

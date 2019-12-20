@@ -6,6 +6,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+.all-people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.person{
+  background-color: #a9d6bd;
+  color: #2b3145;
+  width: 200px;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
