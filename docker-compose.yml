@@ -1,8 +1,32 @@
-version: '3'
+version: "3"
+
 services:
-  web:
-    build: .
+  database:
+    build: database/
+    command: node bin/seeds.js
+
+  server:
+    build:
+      context: ./server/
+    command: npm run dev
     ports:
       - "5000:5000"
-  redis:
-    image: "redis:alpine"
+    volumes:
+      - ./server/:/usr/app
+      - /usr/app/node_modules
+    command: npm run dev
+    depends_on:
+      - database
+
+  client:
+    build:
+      context: ./client/
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    links: [server]
+    depends_on:
+      - server
+    command: npm start

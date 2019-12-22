@@ -1,18 +1,18 @@
-# FROM node:6.11.5 
-# WORKDIR /client
+
+# FROM node:6.11.5
+
 # COPY package.json .
 # RUN npm install    
 # COPY . .
-# CMD [ "npm", "start" ]
+
+# CMD [ "npm", "run dev" ]  
 
 
 FROM node:lts-slim
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/app
 COPY package.json .
 RUN npm install    
 COPY . /usr/app
+EXPOSE 5000
 
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "dev" ]
