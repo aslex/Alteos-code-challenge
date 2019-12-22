@@ -1,23 +1,30 @@
-.App {
+html {
   text-align: center;
+background-color: rgb(249, 249, 249);
+color: rgb(29, 73, 145);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 .all-people {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .person{
-  background-color: #a9d6bd;
-  color: #2b3145;
-  width: 200px;
+  background-color: rgba(246, 194, 70, 1);
+  color: white;
+  width: 250px;
   border-radius: 1em;
   padding: 1em;
   margin: 1em;
+}
+input {
+  width: 45vw;
+  height: 1.8em;
+  text-align: center;
+  border-radius: 1em;
+  border: solid #1D4995 .5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
